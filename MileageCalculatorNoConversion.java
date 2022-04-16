@@ -1,6 +1,5 @@
 /**
  * File: csci1302/ch16/MileageCalculator.java
-
  * Package: ch16
  * @author Christopher Jeschhkeit and Hunter Jones
  * Created on: Apr 16, 2022
@@ -34,8 +33,8 @@ public class MileageCalculatorNoConversion extends Application {
 	private String altMileage = "Kilometers";
 	private String altCapacity = "Liters";
 	private String altResult = "L/100KM";
-
 	private String[] MPGConv = { "Miles", "Kilometer" };
+	
 	// create UI components split by type
 	private Button btnCalc = new Button("Calculate");
 	private Button btnReset = new Button("Reset");
@@ -50,17 +49,10 @@ public class MileageCalculatorNoConversion extends Application {
 	private TextField tfResult = new TextField(defaultCalc);
 
 	private ComboBox<String> cbo = new ComboBox<>();
-	
-	// private RadioButton rbMPG = new RadioButton(defaultResult);
-	// private RadioButton rbKPL = new RadioButton(altResult);
-	// private ToggleGroup tgConv = new ToggleGroup();
 
 	private GridPane mainPane = new GridPane();
 
 	public void start(Stage primaryStage) {
-		// set toggle group for RadioButtons
-		// rbMPG.setToggleGroup(tgConv);
-		// rbKPL.setToggleGroup(tgConv);
 
 		// set preferences for UI components
 		tfDistance.setMaxWidth(txtWidth);
@@ -95,7 +87,6 @@ public class MileageCalculatorNoConversion extends Application {
 		tfCapacity.setOnAction(e -> calcMileage());
 		tfResult.setOnAction(e -> calcMileage());
 		cbo.setOnAction(e -> changeLabels(items.indexOf(cbo.getValue())));
-	
 		btnReset.setOnAction(e -> resetForm());
 
 		// create a scene and place it in the stage
@@ -163,7 +154,6 @@ public class MileageCalculatorNoConversion extends Application {
 	 */
 	private void resetForm() {
 		// reset all form fields
-		
 		tfDistance.setText(defaultEntry);
 		tfCapacity.setText(defaultEntry);
 		tfResult.setText(defaultCalc);
